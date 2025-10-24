@@ -1,10 +1,26 @@
 import streamlit as st
 import pickle
 import pandas as pd
+import requests
+import gdown
 
 movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
 similarity = pickle.load(open('similarity.pkl', 'rb'))
+
+
+
+# url = "https://drive.google.com/uc?id=17YIQxYY220bMjYdabs0-HUqTaJ4G-izw"
+# output = "similarity.pkl"
+# gdown.download(url, output, quiet=False)
+
+
+
+# if not os.path.exists("similarity.pkl"):
+#     print("similarity.pkl missing! Downloading now...")
+#     download_file_from_google_drive("17YIQxYY220bMjYdabs0-HUqTaJ4G-izw", "similarity.pkl")
+
+
 
 def recommend(movie):
     if movie not in movies["title"].values:
