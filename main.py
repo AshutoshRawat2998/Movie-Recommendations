@@ -6,13 +6,15 @@ import gdown
 
 movies_dict = pickle.load(open('movies_dict.pkl', 'rb'))
 movies = pd.DataFrame(movies_dict)
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+
 
 
 
 url = "https://drive.google.com/uc?id=17YIQxYY220bMjYdabs0-HUqTaJ4G-izw"
 output = "similarity.pkl"
 gdown.download(url, output, quiet=False)
+
+similarity = pickle.load(open('similarity.pkl', 'rb'))
 
 
 
